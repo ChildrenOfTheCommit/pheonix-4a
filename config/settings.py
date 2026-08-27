@@ -1,4 +1,6 @@
+from datetime import timedelta
 from pathlib import Path
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -16,6 +18,7 @@ INSTALLED_APPS = [
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
 	'rest_framework',
+	'rest_framework_simplejwt',
 	'accounts',
 	'roles',
 	'planets',
@@ -57,9 +60,9 @@ DATABASES = {
 		'ENGINE': 'django.db.backends.postgresql',
 		'NAME': 'alpha_centauri2',
 		'USER': 'postgres',
-		'PASSWORD': 'postgres',
+		'PASSWORD': '1234',
 		'HOST': 'localhost',
-		'PORT': '5432'
+		'PORT': '8080'
 	}
 }
 
@@ -87,3 +90,21 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+
+AUTH_USER_MODEL = 'accounts.Accounts'
+
+REST_FRAMEWORK = {
+
+	'DEFAULT_AUTHENTICATION_CLASSES':(
+		'rest_framework_simplejwt.authentication.JWTAuthentication',
+	),
+	'DEFAULT_PERMISSION_CLASSES':(
+		'rest_framework.permissions.IsAuthenticated',
+	)
+}
+
+SIMPLE_JWT = {
+	'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+	'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+	'AUTH_HEADER_TYPES': ['Bearer'],
+}
