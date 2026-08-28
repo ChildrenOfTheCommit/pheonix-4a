@@ -7,3 +7,5 @@ urlpatterns = [
 	path('register/', AccountRegister.as_view()),
 	path('accounts/', AccountList.as_view())
 ]
+
+# para maolagay transmission 2026-08-29
