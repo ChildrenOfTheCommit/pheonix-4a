@@ -1,0 +1,9 @@
+.venv
+.idea
+*.sqlite3
+*.env
+
+# Egnoree ol migrations/0** initial.py :)
+**/**/**0**.py
+**/__pycache__
+**/**/__pycache__
