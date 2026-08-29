@@ -1,0 +1,11 @@
+asgiref==3.12.1
+Django==6.1
+django-stubs==6.1.0
+django-stubs-ext==6.1.0
+djangorestframework==3.18.0
+djangorestframework-stubs==3.18.0
+psycopg==3.3.4
+sqlparse==0.5.5
+types-PyYAML==6.0.12.20260724
+typing_extensions==4.16.0
+tzdata==2026.3
