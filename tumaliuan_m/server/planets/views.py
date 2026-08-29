@@ -1,18 +1,19 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from roles.models import Roles
-from roles.serializers import RoleSerializer
+
+from .models import Planets
+from .serializers import PlanetSerializer
 
 
-class RoleListCreate(APIView):
+class PlanetsListCreate(APIView):
 	def get(self, request):
-		roles = Roles.objects.all()
-		serializer = RoleSerializer(roles, many=True)
+		roles = Planets.objects.all()
+		serializer = PlanetSerializer(roles, many=True)
 		return Response(serializer.data)
 
 	def post(self, request):
-		serializer = RoleSerializer(data=request.data)
+		serializer = PlanetSerializer(data=request.data)
 		if serializer.is_valid():
 			serializer.save()
 			return Response(serializer.data)
