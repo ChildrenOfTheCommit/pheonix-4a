@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import Planet
+from .models import Planets
 
 
 class PlanetSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Planet
-        fields = '__all__'
+	class Meta:
+		model = Planets
+		fields = '__all__'

@@ -1,27 +1,30 @@
 from django.db import models
+from django.db.models import ForeignKey
 
-
-from planet_classes.models import PlanetClass
 from accounts.models import Accounts
-
-class Accounts(models.Model):
-    id = models.AutoField(primary_key=True)
-    Planet = models.CharField()
-    Galaxy = models.CharField()
-    Star_System = models.CharField()
-    Discovery_Date = models.DateTimeField()
-
-    Owner = models.ForeignKey(
-        Accounts,
-        on_delete=models.PROTECT,
-    )
-
-    Class = models.ForeignKey(
-    PlanetClass,
-    on_delete=models.PROTECT
-    )
+from planet_classes.models import PlanetClass
 
 
-    description = models.TextField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+class Planets(models.Model):
+	id = models.AutoField(primary_key=True)
+	name = models.CharField(max_length=200, unique=True)
+	galaxy = models.CharField(max_length=200, null=True, blank=True)
+	star_system = models.CharField(max_length=200, null=True, blank=True)
+	description = models.CharField(max_length=200, null=True, blank=True)
+	discover_date = models.DateField(max_length=200, null=True, blank=True)
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	owner = ForeignKey(
+		Accounts,
+		on_delete=models.SET_NULL,
+		null=True,
+		blank=True
+	)
+
+	planet_class = models.ForeignKey(
+		PlanetClass,
+		on_delete=models.SET_NULL,
+		null=True,
+		blank=True
+	)

@@ -4,6 +4,6 @@ from .models import Roles
 
 
 class RoleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Roles
-        fields = '__all__'
+	class Meta:
+		model = Roles
+		fields = '__all__'

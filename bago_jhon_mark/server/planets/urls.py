@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import PlanetListCreate
+
+from .views import PlanetsListCreate
 
 urlpatterns = [
-    path('planet/', PlanetListCreate.as_view())
+	path('planets/', PlanetsListCreate.as_view())
 ]
