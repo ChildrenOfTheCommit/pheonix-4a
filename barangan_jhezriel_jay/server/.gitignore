@@ -1,0 +1,8 @@
+.venv
+.idea
+*.sqlite3
+*.env
+*.sh
+
+# Egnoree ol migrations/0** initial.py :)
+**/**/**0**.py
