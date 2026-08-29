@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import PlanetClassesListCreate
+
+from .views import PlanetClassListCreate, PlanetClassDetail
 
 urlpatterns = [
-    path('planet_classes/', PlanetClassesListCreate.as_view()),
+	path('planet-class/', PlanetClassListCreate.as_view()),
+	path('planet-class/<int:pk>/', PlanetClassDetail.as_view())
 ]

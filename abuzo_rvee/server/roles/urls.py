@@ -2,5 +2,6 @@ from django.urls import path
 from roles.views import RoleListCreate
 
 urlpatterns = [
-    path('roles/', RoleListCreate.as_view()),
+	path('roles/', RoleListCreate.as_view())
 ]
+# http://localhost:8000/api/roles/

@@ -1,6 +1,9 @@
 from django.urls import path
-from .views import AccountListCreate
+
+from .views import *
 
 urlpatterns = [
-    path('accounts/', AccountListCreate.as_view()),
+	path('login/', AccountLogin.as_view()),
+	path('register/', AccountRegister.as_view()),
+	path('accounts/', AccountList.as_view())
 ]
