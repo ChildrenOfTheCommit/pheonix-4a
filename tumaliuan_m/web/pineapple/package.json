@@ -11,7 +11,11 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "vue": "^3.5.42"
+    "@tailwindcss/vite": "^4.3.3",
+    "axios": "^1.20.0",
+    "pinia": "^4.0.3",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.5",
