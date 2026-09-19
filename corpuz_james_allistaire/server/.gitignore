@@ -1,0 +1,35 @@
+# ---- Environment / IDE ----
+.venv
+venv/
+env/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# ---- Environment / secrets ----
+*.env
+.env
+
+# ---- Databases ----
+*.sqlite3
+*.db
+
+# ---- Python / Django ----
+*.log
+/media/
+/staticfiles/
+/static/collectstatic/
+
+# Existing project-specific rule: ignore 0** migration files
+**/**/**0**.py
+
+# ---- Testing / tooling ----
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
